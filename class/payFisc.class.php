@@ -51,10 +51,10 @@ class payFisc extends pay{
 		$data["lidm"] = $order["orderNumber"].$this->rand; 									//訂單編號
 		$data["purchAmt"] = $order["total"] + $order["freight"] + $order["handlingFee"];	//交易金額
 		$data["AuthResURL"] = $this->returnURL;												//通知回傳的網址
-        $data['LocalDate'] = date('Ymd');                       							//交易日期
-        $data['LocalTime'] = date('His');                       							//交易時間
+		$data['LocalDate'] = date('Ymd');                       							//交易日期
+		$data['LocalTime'] = date('His');                       							//交易時間
 		$data["token"] = $this->token;														//驗證參數
-        $data['reqToken'] = $this->getReqToken($data);                       				//交易驗證碼
+		$data['reqToken'] = $this->getReqToken($data);                       				//交易驗證碼
 
 		$this->formSubmit($this->serviceURL,$data);
 	}
