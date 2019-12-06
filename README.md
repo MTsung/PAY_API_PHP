@@ -4,3 +4,6 @@
 * 財金資訊股份有限公司
 ## 範例畫面
 ![](https://raw.githubusercontent.com/MTsung/PAY_API_PHP/master/index.png)
+
+### License
+[MIT license](https://opensource.org/licenses/MIT)
