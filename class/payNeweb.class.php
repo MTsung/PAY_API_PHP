@@ -11,6 +11,7 @@ class payNeweb extends pay{
 	protected $serviceURL;
 	protected $invoiceURL;
 	protected $returnURL = NEWEB_CALLBACK;
+	protected $notifyURL = NEWEB_CALLBACK."?isNotify=1";
 	protected $backURL = HTTP_PATH;
 	protected $MerchantID;
 	protected $HashKey;
@@ -81,7 +82,7 @@ class payNeweb extends pay{
 		$data["ReturnURL"] = $this->returnURL;
 
 		//1.以幕後方式回傳給商店相關支付結果資料
-		$data["NotifyURL"] = $this->returnURL."?isNotify=1";
+		$data["NotifyURL"] = $this->notifyURL;
 
 		//1.系統取號後以 form post 方式將結果導回商店指定的網址
 		// $data["CustomerURL"] = "";
