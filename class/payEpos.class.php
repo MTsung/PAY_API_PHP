@@ -59,7 +59,7 @@ class payEpos extends pay{
 
 		$data["AuthResURL"] = $this->returnURL;												//通知回傳的網址
 		$data["AuthInfoPage"] = "Y";														//Y:預設值。交易取得授權後,會顯示系統預設的相關授權訊息結果頁面。
-        $data['checkValue'] = $this->getCheckValue($data);                       			//交易驗證碼
+		$data['checkValue'] = $this->getCheckValue($data);                       			//交易驗證碼
 
 		$this->formSubmit($this->serviceURL,$data);
 	}
