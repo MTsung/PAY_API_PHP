@@ -49,6 +49,12 @@
 	define('PAY_NOW_PASSWORD', '');
 	define('PAY_NOW_ECPLATFORM', '');
 
+	//台新
+	define('TSPG_IS_TEST', true);
+	define('TSPG_MID', '');
+	define('TSPG_TID', '');
+	define('TSPG_CALLBACK', HTTP_PATH.'callback/tspg.php');
+
 
 	abstract class paymentMethodType{
 
@@ -69,6 +75,7 @@
 		const CVSCOM_NEWEB_Y   = 15;//超商取貨付款(藍新)
 		const LINE_PAY         = 16;//LINE PAY
 		const PAY_NOW          = 17;//PAY NOW
+		const TSPG             = 18;//信用卡刷卡(台新銀行)
 
 	}
 

@@ -6,6 +6,7 @@
     include_once("class/payNeweb.class.php");
     include_once("class/payLinePay.class.php");
     include_once("class/payPayNow.class.php");
+    include_once("class/payTspgPay.class.php");
 
     if(isset($_POST["paymentMethod"])){
     	$order["paymentMethod"] = $_POST["paymentMethod"];
@@ -64,6 +65,13 @@
 				);
 				$payNow->createOrder($order,$orderList);
     			break;
+			case paymentMethodType::TSPG:
+				$tspg = new payTspgPay(
+					TSPG_MID,
+					TSPG_TID
+				);
+				$tspg->createOrder($order,$orderList);
+    			break;
     	}
     }
 ?>
@@ -111,6 +119,7 @@
 					<option value="15">超商取貨付款(藍新)</option>
 					<option value="16">LINE PAY</option>
 					<option value="17">PAY NOW</option>
+					<option value="18">信用卡刷卡(台新銀行)</option>
                 </select>
             </div>
             <!-- / 單個欄位 -->
