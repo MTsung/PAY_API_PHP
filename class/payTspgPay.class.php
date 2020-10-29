@@ -4,13 +4,13 @@
  * 台新
  */
 class payTspgPay extends pay{
-	var $checkURL;
-	var $serviceURL;
-	var $returnURL = TSPG_CALLBACK;
-	var $mid;
-	var $tid;
-	var $rand;
-	var $isTest = TSPG_IS_TEST;
+	protected $checkURL;
+	protected $serviceURL;
+	protected $returnURL = TSPG_CALLBACK;
+	protected $mid;
+	protected $tid;
+	protected $rand;
+	protected $isTest = TSPG_IS_TEST;
 
 	/**
 	 * [__construct description]
