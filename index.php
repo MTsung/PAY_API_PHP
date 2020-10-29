@@ -7,6 +7,7 @@
     include_once("class/payLinePay.class.php");
     include_once("class/payPayNow.class.php");
     include_once("class/payTspgPay.class.php");
+    include_once("class/payYiPay.class.php");
 
     if(isset($_POST["paymentMethod"])){
     	$order["paymentMethod"] = $_POST["paymentMethod"];
@@ -72,6 +73,14 @@
 				);
 				$tspg->createOrder($order,$orderList);
     			break;
+			case paymentMethodType::YI_PAY:
+				$yiPay = new payYiPay(
+					YI_PAY_MERCHANTID,
+					YI_PAY_HASHKEY,
+					YI_PAY_HASHIV
+				);
+				$yiPay->createOrder($order,$orderList);
+    			break;
     	}
     }
 ?>
@@ -120,6 +129,7 @@
 					<option value="16">LINE PAY</option>
 					<option value="17">PAY NOW</option>
 					<option value="18">信用卡刷卡(台新銀行)</option>
+					<option value="19">YI PAY(乙禾)</option>
                 </select>
             </div>
             <!-- / 單個欄位 -->

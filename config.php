@@ -55,6 +55,13 @@
 	define('TSPG_TID', '');
 	define('TSPG_CALLBACK', HTTP_PATH.'callback/tspg.php');
 
+	//YI PAY
+	define('YI_PAY_IS_TEST', true);
+	define('YI_PAY_MERCHANTID', '');
+	define('YI_PAY_HASHKEY', '');
+	define('YI_PAY_HASHIV', '');
+	define('YI_PAY_CALLBACK', HTTP_PATH.'callback/yiPay.php');
+
 
 	abstract class paymentMethodType{
 
@@ -76,6 +83,7 @@
 		const LINE_PAY         = 16;//LINE PAY
 		const PAY_NOW          = 17;//PAY NOW
 		const TSPG             = 18;//信用卡刷卡(台新銀行)
+		const YI_PAY           = 19;//YI PAY
 
 	}
 
