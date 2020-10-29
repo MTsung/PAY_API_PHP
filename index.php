@@ -5,6 +5,7 @@
     include_once("class/payEpos.class.php");
     include_once("class/payNeweb.class.php");
     include_once("class/payLinePay.class.php");
+    include_once("class/payPayNow.class.php");
 
     if(isset($_POST["paymentMethod"])){
     	$order["paymentMethod"] = $_POST["paymentMethod"];
@@ -55,6 +56,14 @@
 				);
 				$line->createOrder($order,$orderList);
     			break;
+			case paymentMethodType::PAY_NOW:
+				$payNow = new payPayNow(
+					PAY_NOW_WEBNO,
+					PAY_NOW_PASSWORD,
+					PAY_NOW_ECPLATFORM
+				);
+				$payNow->createOrder($order,$orderList);
+    			break;
     	}
     }
 ?>
@@ -101,6 +110,7 @@
 					<option value="14">超商取貨不付款(藍新)</option>
 					<option value="15">超商取貨付款(藍新)</option>
 					<option value="16">LINE PAY</option>
+					<option value="17">PAY NOW</option>
                 </select>
             </div>
             <!-- / 單個欄位 -->

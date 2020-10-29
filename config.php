@@ -42,6 +42,13 @@
 	define('LINE_PAY_MERCHANTNAME', '');
 	define('LINE_PAY_CALLBACK', HTTP_PATH.'callback/line.php?amount=');
 
+	//PAY NOW
+	//回傳網址在PAY NOW後台設定
+	define('PAY_NOW_IS_TEST', true);
+	define('PAY_NOW_WEBNO', '');
+	define('PAY_NOW_PASSWORD', '');
+	define('PAY_NOW_ECPLATFORM', '');
+
 
 	abstract class paymentMethodType{
 
@@ -61,6 +68,7 @@
 		const CVSCOM_NEWEB_N   = 14;//超商取貨不付款(藍新)
 		const CVSCOM_NEWEB_Y   = 15;//超商取貨付款(藍新)
 		const LINE_PAY         = 16;//LINE PAY
+		const PAY_NOW          = 17;//PAY NOW
 
 	}
 
