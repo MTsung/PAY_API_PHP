@@ -53,6 +53,7 @@
 					LINE_PAY_CHANNELSECRET,
 					LINE_PAY_MERCHANTNAME
 				);
+				$line->createOrder($order,$orderList);
     			break;
     	}
     }
