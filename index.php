@@ -4,6 +4,7 @@
     include_once("class/payFisc.class.php");
     include_once("class/payEpos.class.php");
     include_once("class/payNeweb.class.php");
+    include_once("class/payLinePay.class.php");
 
     if(isset($_POST["paymentMethod"])){
     	$order["paymentMethod"] = $_POST["paymentMethod"];
@@ -45,6 +46,13 @@
 					NEWEB_HASH_IV
 				);
 				$neweb->createOrder($order,$orderList);
+    			break;
+			case paymentMethodType::LINE_PAY:
+				$line = new payLinePay(
+					LINE_PAY_CHANNELID,
+					LINE_PAY_CHANNELSECRET,
+					LINE_PAY_MERCHANTNAME
+				);
     			break;
     	}
     }
@@ -91,6 +99,7 @@
 					<option value="13">ezPay 電子錢包(藍新)</option>
 					<option value="14">超商取貨不付款(藍新)</option>
 					<option value="15">超商取貨付款(藍新)</option>
+					<option value="16">LINE PAY</option>
                 </select>
             </div>
             <!-- / 單個欄位 -->

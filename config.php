@@ -35,6 +35,13 @@
 	define('NEWEB_HASH_IV', '');
 	define('NEWEB_CALLBACK', HTTP_PATH.'callback/neweb.php');
 
+	//LINE PAY
+	define('LINE_PAY_IS_TEST', true);
+	define('LINE_PAY_CHANNELID', '');
+	define('LINE_PAY_CHANNELSECRET', '');
+	define('LINE_PAY_MERCHANTNAME', '');
+	define('LINE_PAY_CALLBACK', HTTP_PATH.'callback/line.php?amount=');
+
 
 	abstract class paymentMethodType{
 
@@ -53,6 +60,7 @@
 		const P2G_NEWEB        = 13;//ezPay 電子錢包(藍新)
 		const CVSCOM_NEWEB_N   = 14;//超商取貨不付款(藍新)
 		const CVSCOM_NEWEB_Y   = 15;//超商取貨付款(藍新)
+		const LINE_PAY         = 16;//LINE PAY
 
 	}
 
